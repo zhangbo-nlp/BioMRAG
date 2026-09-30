@@ -1,0 +1,78 @@
+datasets:
+  mimic_cxr:
+    type: image-text
+    train: 207091
+    validation: 10000
+    retrieval_training: true
+    knowledge_base: true
+    evaluation: false
+  pmc_oa:
+    type: image-text
+    train: 1634127
+    validation: 10000
+    retrieval_training: true
+    knowledge_base: true
+    evaluation: false
+  roco:
+    type: image-text
+    train: 76076
+    validation: 4004
+    retrieval_training: true
+    knowledge_base: true
+    evaluation: false
+  llava_med_align:
+    type: image-text
+    train: 457292
+    validation: 10000
+    retrieval_training: true
+    knowledge_base: true
+    evaluation: false
+  pubmed:
+    type: text
+    train: 23898701
+    retrieval_training: false
+    knowledge_base: true
+    evaluation: false
+  statpearls:
+    type: text
+    train: 330680
+    retrieval_training: false
+    knowledge_base: true
+    evaluation: false
+  textbooks:
+    type: text
+    train: 125847
+    retrieval_training: false
+    knowledge_base: true
+    evaluation: false
+  llava_med_inst:
+    type: multimodal-instruction
+    train: 45313
+    validation: 5666
+    test: 5665
+    retrieval_training: true
+    knowledge_base: true
+    evaluation: true
+  vqa_rad:
+    type: multimodal-qa
+    train: 1797
+    test: 451
+    retrieval_training: true
+    knowledge_base: true
+    evaluation: true
+  slake:
+    type: multimodal-qa
+    train: 4919
+    validation: 1053
+    test: 1061
+    retrieval_training: true
+    knowledge_base: true
+    evaluation: true
+  pathvqa:
+    type: multimodal-qa
+    train: 19654
+    validation: 6259
+    test: 6719
+    retrieval_training: true
+    knowledge_base: true
+    evaluation: true

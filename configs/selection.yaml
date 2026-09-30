@@ -1,0 +1,3 @@
+retrieved_candidates: 30
+evidence_budget: 5
+proxy_model: biomrag-proxy-qwen2.5-vl-7b

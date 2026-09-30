@@ -1,0 +1,9 @@
+batch_size: 256
+index_type: ivfpq
+nlist: 4096
+m: 64
+nbits: 8
+nprobe: 32
+train_sample_size: 1000000
+seed: 42
+save_embeddings: false
