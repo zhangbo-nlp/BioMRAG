@@ -64,6 +64,31 @@ Expected runtime directories are `data/`, `checkpoints/`, and `outputs/`.
 | Proxy optimization | 3 epochs, LR \(10^{-4}\), global batch 16 on 2 GPUs, seed 21 |
 | Generator | Qwen2.5-VL-72B-Instruct, temperature 0.01, top-p 0.001 |
 
+## Released Data
+
+The distilled subset-utility corpus released with the paper contains 94,920
+annotations, namely twelve of the fifteen annotated subsets for each of 7,910
+distillation queries, each paired with a rationale and one ordinal utility
+score in 1-10. Records use the ms-swift SFT format consumed by
+`configs/proxy_qlora_swift.yaml`.
+
+Download: <https://drive.google.com/file/d/1_b_9iUMsqDGLgeU04DUYFJIGE7XsIZ44/view?usp=sharing>
+
+Image paths inside the records are relative to the runtime root, so place the
+query and knowledge images under the paths described in `docs/DATA_SCHEMA.md`
+before training. The download is a JSON list; convert it to the JSONL file
+expected by ms-swift:
+
+```bash
+python - <<'PY'
+import json
+rows = json.load(open("proxy_model_training_data_94920.json"))
+with open("data/proxy/proxy_train.swift.jsonl", "w", encoding="utf-8") as handle:
+    for row in rows:
+        handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+PY
+```
+
 ## Data Preparation
 
 Canonical JSONL formats are defined in `docs/DATA_SCHEMA.md`.
